@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<div class="site-main-container">
+			<!-- Start top-post Area -->
+			<section class="top-post-area pt-10">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="hero-nav-area">
+								<h1 class="text-white">Login</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End top-post Area -->
+			<!-- Start contact-page Area -->
+			<section class="contact-page-area pt-50 pb-120">
+				<div class="container">
+					<div class="row contact-wrap">
+						<div class="col-lg-12 d-flex justify-content-center">
+							<form class="form-area contact-form text-left" action="" method="post">
+								<div class="row">
+									<div class="col-lg-12">
+										<input name="username" placeholder="Enter username" class="common-input mb-20 form-control" required="" type="text">
+										<input name="password" placeholder="Enter password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter password'" class="common-input mb-20 form-control" required="" type="password">
+									</div>
+									<div class="col-lg-12">
+										<input type="submit" class="primary-btn primary w-100" value="Login">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End contact-page Area -->
+		</div>
+{% endblock %}

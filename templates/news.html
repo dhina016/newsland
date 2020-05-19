@@ -1,0 +1,216 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+
+<div class="site-main-container">
+  <!-- End top-post Area -->
+
+  <!-- Start latest-post Area -->
+  <section class="latest-post-area pb-120">
+    <div class="container no-padding">
+      <div class="row">
+        <div class="col-lg-8 post-list">
+          {% if new %}
+          <!-- Start latest-post Area -->
+          <div class="latest-post-wrap mb-30">
+            <h4 class="cat-title">News</h4>
+
+            {% for n in new %}
+            <div class="single-latest-post row align-items-center">
+              <div class="col-lg-5 post-left">
+                <div class="feature-img relative">
+                  <div class="overlay overlay-bg"></div>
+                  <img
+                    class="img-fluid"
+                    src="{{ url_for('static', filename='img/news/') }}{{ n.img }}"
+                    alt=""
+                  />
+                </div>
+                <ul class="tags">
+                  <li><a href="/view/category/{{ n.c_id }}">{{ n.catg }}</a></li>
+                  {% if n.u_id == session.id or session.admin %}
+                  <li><a href="/edit/{{ n.id }}">Edit</a></li>
+                  {% endif %}
+                </ul>
+              </div>
+              <div class="col-lg-7 post-right">
+                <a href="/singlepost/{{ n.id }}">
+                  <h4>{{ n.title }}</h4>
+                </a>
+                <ul class="meta">
+                  <li>
+                    <a href="/view/name/{{ n.name }}"
+                      ><span class="lnr lnr-user"></span>{{ n.name }}</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/view/date/{{ (n.date).strftime('%Y-%m-%d') }}"><span class="lnr lnr-calendar-full"></span>{{
+                      (n.date).strftime("%d %B %Y") }}</a>
+                  </li>
+                </ul>
+                <p class="excert">
+                  {{ n.description }}
+				</p>
+				<div class="flex">
+				{% if session.admin %}
+
+				{% if n.pin == 0 %}				  
+				<form action="/pin" method="post">
+				  <input type="hidden" name="id" value="{{ n.id }}">
+				  <input type="submit" class="btn btn-danger mr-2" value="Pin">
+				</form>
+				{% else %}
+				<form action="/unpin" method="post">
+					<input type="hidden" name="id" value="{{ n.id }}">
+					<input type="submit" class="btn btn-danger mr-2" value="Unpin">
+				  </form>
+				{% endif %}
+				<form action="/delete" method="post">
+				  <input type="hidden" name="id" value="{{ n.id }}">
+				  <input type="submit" class="btn btn-danger" value="Delete">
+				</form>
+				{% endif %}
+				</div>
+			  </div>
+            </div>
+            {% endfor %}
+          </div>
+          <!-- End latest-post Area -->
+          {% endif %} {% if old %}
+          <!-- Start relavent-story-post Area -->
+          <div class="relavent-story-post-wrap">
+            <h4 class="title">Old Stories</h4>
+            <div class="relavent-story-list-wrap">
+              {% for n in old %}
+
+              <div class="single-relavent-post row align-items-center">
+                <div class="col-lg-5 post-left">
+                  <div class="feature-img relative">
+                    <div class="overlay overlay-bg"></div>
+                    <img
+                      class="img-fluid"
+                      src="{{ url_for('static', filename='img/news/') }}{{ n.img }}"
+                      alt=""
+                    />
+                  </div>
+                  <ul class="tags">
+                    <li><a href="/view/category/{{ n.c_id }}">{{ n.catg }}</a></li>
+                    {% if n.u_id == session.id or session.admin %}
+                    <li><a href="/edit/{{ n.id }}">Edit</a></li>
+                    {% endif %}
+                  </ul>
+                </div>
+                <div class="col-lg-7 post-right">
+                  <a href="/singlepost/{{ n.id }}">
+                    <h4>{{ n.title }}</h4>
+                  </a>
+                  <ul class="meta">
+                    <li>
+                      <a href="/view/name/{{ n.name }}"
+                        ><span class="lnr lnr-user"></span>{{ n.name }}</a
+                      >
+                    </li>
+                    <li>
+                      <a href="/view/date/{{ (n.date).strftime('%Y-%m-%d') }}"
+                        ><span class="lnr lnr-calendar-full"></span>{{
+							(n.date).strftime("%d %B %Y") }}</a
+                      >
+                    </li>
+                  </ul>
+                  <p class="excert">
+					{{ n.description }}
+				  </p>
+				  <div class="flex">
+				  {% if session.admin %}
+
+				  {% if n.pin == 0 %}				  
+				  <form action="/pin" method="post">
+					<input type="hidden" name="id" value="{{ n.id }}">
+					<input type="submit" class="btn btn-danger mr-2" value="Pin">
+				  </form>
+				  {% else %}
+				  <form action="/unpin" method="post">
+					  <input type="hidden" name="id" value="{{ n.id }}">
+					  <input type="submit" class="btn btn-danger mr-2" value="Unpin">
+					</form>
+				  {% endif %}
+
+				  <form action="/delete" method="post">
+					<input type="hidden" name="id" value="{{ n.id }}">
+					<input type="submit" class="btn btn-danger" value="Delete">
+				  </form>
+				  {% endif %}
+				</div>
+                </div>
+              </div>
+
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          <!-- End relavent-story-post Area -->
+        </div>
+		{% if choice %}
+        <div class="col-lg-4">
+          <div class="sidebars-area">
+            <div class="single-sidebar-widget editors-pick-widget">
+              <h6 class="title">Pin By Admin</h6>
+			  {% for n in choice %}
+              <div class="editors-pick-post">
+                <div class="feature-img-wrap relative">
+                  <div class="feature-img relative">
+                    <div class="overlay overlay-bg"></div>
+                    <img
+                      class="img-fluid"
+                      src="{{ url_for('static', filename='img/news/') }}{{ n.img }}"
+                      alt=""
+                    />
+                  </div>
+                  <ul class="tags">
+                    <li><a href="/view/category/{{ n.c_id }}">{{ n.catg }}</a></li>
+                  </ul>
+                </div>
+                <div class="details">
+                  <a href="/singlepost/{{ n.id }}">
+                    <h4 class="mt-20">
+						{{ n.title }}
+                    </h4>
+                  </a>
+                  <ul class="meta">
+                    <li>
+                      <a href="/view/name/{{ n.name }}"
+                        ><span class="lnr lnr-user"></span>{{ n.name }}</a
+                      >
+                    </li>
+                    <li>
+                      <a href="/view/date/{{ (n.date).strftime('%Y-%m-%d') }}"
+                        ><span class="lnr lnr-calendar-full"></span>{{
+							(n.date).strftime("%d %B %Y") }}</a
+                      >
+                    </li>
+                  </ul>
+                  <p class="excert">
+                    {{ n.description }}
+				  </p>
+				  {% if session.admin %}
+				  <form action="/delete" method="post">
+					<input type="hidden" name="id" value="{{ n.id }}">
+					<input type="submit" class="btn btn-danger" value="Delete">
+				  </form>
+				  {% endif %}
+                </div>
+			  </div>
+			  {% endfor %}
+
+            </div>
+          </div>
+		</div>
+		{% endif %}
+
+      </div>
+    </div>
+  </section>
+  <!-- End latest-post Area -->
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+		<div class="site-main-container">
+			<!-- Start top-post Area -->
+			<section class="top-post-area pt-10">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="hero-nav-area">
+								<h1 class="text-white">Add News</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End top-post Area -->
+			<!-- Start contact-page Area -->
+			<section class="contact-page-area pt-50 pb-120">
+				<div class="container">
+					<div class="row contact-wrap">
+						<div class="col-lg-12">
+							<form class="form-area contact-form text-left" action="" method="post" enctype="multipart/form-data">
+								<div class="row">
+									<div class="col-lg-12">
+										{% if session.admin %}
+										<input name="id" type="hidden" value="0">								
+										{% else %}
+										<input name="id" type="hidden" value="{{ session.id }}">								
+										{% endif %}
+										<input name="username" type="hidden" value="{{ session.username }}">								
+										<input name="title" placeholder="Enter Title" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Title'" class="common-input mb-20 form-control" required="" type="text">								
+										<textarea class="common-textarea mb-20 form-control" name="description" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>
+										<select class="form-control" id="category" name="category">
+											{% for c in result %}
+											<option value="{{ c.id }}">{{ c.name }}</option>
+											{% endfor%}
+										</select>
+										<input name="file" id="file" class="common-input mb-20 form-control-file" type="file" accept="image/*">								
+									</div>
+                                    
+                                    <div class="col-lg-12">
+										<br>>
+										<input type="submit" class="primary-btn primary w-100" value="Add Post">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End contact-page Area -->
+		</div>
+{% endblock %}

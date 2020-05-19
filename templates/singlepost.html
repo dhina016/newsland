@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<div class="site-main-container">
+			<!-- Start top-post Area -->
+			<!-- End top-post Area -->
+			<!-- Start latest-post Area -->
+			<section class="latest-post-area pb-120">
+				<div class="container no-padding">
+					<div class="row">
+						<div class="col-lg-12 post-list">
+							<!-- Start single-post Area -->
+							<div class="single-post-wrap">
+								<div class="feature-img-thumb relative">
+									<div class="overlay overlay-bg"></div>
+									<img class="img-fluid " src="{{ url_for('static', filename='img/news/') }}{{ detail.img }}" alt="">
+								</div>
+								<div class="content-wrap">
+									<ul class="tags mt-10">
+										<li><a href="#">{{ detail.catg }}</a></li>
+									</ul>   
+									<a href="#">
+										<h3>{{ detail.title }}</h3>
+									</a>
+									<ul class="meta pb-20">
+										<li><a href="#"><span class="lnr lnr-user"></span>{{ detail.name }}</a></li>
+										<li><a href="#"><span class="lnr lnr-calendar-full"></span>{{
+											(detail.date).strftime("%d %B %Y") }}</a></li>
+									</ul>
+									<p>
+										{{ detail.description }}									</p>								
+							</div>
+						</div>
+						<!-- End single-post Area -->
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock %}
