@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2020 at 09:07 PM
+-- Generation Time: May 20, 2020 at 07:46 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -87,7 +87,7 @@ CREATE TABLE `post` (
   `id` int(11) NOT NULL,
   `c_id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
-  `description` varchar(500) NOT NULL,
+  `description` varchar(1000) NOT NULL,
   `u_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `date` date NOT NULL,
@@ -100,10 +100,10 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `c_id`, `title`, `description`, `u_id`, `name`, `date`, `img`, `pin`) VALUES
-(1, 2, ' Sports a', 'adsadads', 0, 'admin', '2020-05-18', 'default.jpg', 0),
-(3, 2, ' Sports a', 'adsadads', 2, 'dinesh', '2020-05-19', 'default.jpg', 1),
-(4, 5, ' Sports asadsa', 'adsadads', 1, 'sasi', '2020-05-15', '60135504_2348884511989852_6609624827940569088_n.jpg', 1),
-(5, 2, ' Sports a', 'adsadads', 0, 'admin', '2020-05-19', 'default.jpg', 0);
+(1, 2, 'East Bengal players, officials asked to vacate flats amid lockdown', 'Some East Bengal players, including foreign recruits, and physical trainer Carlos Nodar, who are still stuck here amid the coronavirus-forced national lockdown, have been asked to \"vacate their flats\" provided by sponsors Quess Corp.\r\n\r\nMost of East Bengal\'s foreign players have left home but a few are still here along with the Spaniard Nodar who had preferred to stay back.\r\n\r\n\"This is the worst thing to happen. Where will we go now especially when there\'s nationwide lockdown in force?\" a player told PTI, confirming the development.\r\n\r\n\"There is no way we can vacate at this point of time but the management is just ignoring our calls. Let\'s wait and watch.\"\r\n\r\nThe Bangalore-based Quess group, which is exiting the club on May 31, had last month activated the Force Majeure clause, citing COVID-19 pandemic, to terminate all the contracts with effect from May 1. The players had approached the Football Players\' Association of India.', 0, 'admin', '2020-05-18', 'west.jpg', 0),
+(3, 3, 'Coronavirus outbreak: Struggle of a doctor', 'Many brave hearts are on the frontline in the battle with Coronavirus. One such inspiring story is of a young doctor Dr. Anjuta who is working at Jawaharlal Nehru Bal Chikitsalaya, Delhi. Hailing from Manipur, Dr. Anjuta is living away from her ailing parents in Delhi. From cleaning utensils, clothes to cooking, apart from fulfilling her duty at the hospital by treating young patients, she does all her chores at home on her own. Watch the video to know her struggle in the COVID-19 fight.', 2, 'dinesh', '2020-05-19', 'happydoctor.jpg', 1),
+(4, 2, 'Coronavirus Lockdown: IPL 2020 to be scheduled for September?', 'Cricket occupies a special place in India’s heart. For Indians, it as much as a religion. With still no concrete solutions for the Coronavirus pandemic and with lockdown 3.0 continuing, sportspersons are missing their requisite training and have them cooped up their homes. The economic structure of the cricket industry is likely to change and lower-ranked nations will face a crunch in funds, as said by experts. Due to this COVID-19 pandemic, even the Indian Premier League (IPL) has been postponed and is likely to be held in September this year. And this brings us to the point that COVID-19 is likely to change the entire sports industry in ways which we couldn’t even think until now.', 1, 'sasi', '2020-05-15', 'maxresdefault.jpg', 1),
+(5, 7, 'Maharashtra: Three Held For Attacking Cop On Lockdown Duty', 'Three men were arrested for allegedly attacking a policeman, who was on lockdown duty, at Ambejogai town of Maharashtra\'s Beed district, an official said on Friday. Govind Yelmate, who is attached to Amjogai police station, was beaten up by three men on Wednesday night, inspector Siddharth Gade said. Yelmate was investigating an offence at Yashwantnagar, where he spotted Kishor Lomte, Vaibhav Akhate and Tushar Shingare chatting at the street corner and questioned them, the official said.', 0, 'admin', '2020-05-19', 'cop.jpg', 0);
 
 -- --------------------------------------------------------
 

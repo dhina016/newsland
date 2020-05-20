@@ -18,21 +18,21 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/dhina016/Expense-Management">
-    <img src="assets/images/logo.png" alt="Logo" width="155" height="35">
+  <a href="https://github.com/dhina016/newsland">
+    <img src="screenshot/logo.png" alt="Logo" width="155" height="35">
   </a>
 
-  <h3 align="center">Expense Management System</h3>
+  <h3 align="center">Newsland</h3>
 
   <p align="center">
-    This expense management system is used to add the product either inward or outward. In inward, you can add inward product and balance is increased. In outward, you can add outward product and balance is decreased. You get the report of inward and outward as pdf, excel, and print.
+Newsland is basic webapplication using flask. This is my first flask app. So, it may contains errors and its a simple news feed website. The guest can see the news only. After registration you can able to post news and edit your news. Then having admin login. Admin can access to post, edit, pin the news feed. Its very simple and basic concept. You can use this source to understand the working flask and jinja code. 
     <br />
-    <a href="https://github.com/dhina016/Expense-Management"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/dhina016/newsland"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/dhina016/Expense-Management/issues">Report Bug</a>
+    <a href="https://github.com/dhina016/newsland/issues">Report Bug</a>
     ·
-    <a href="https://github.com/dhina016/Expense-Management/issues">Request Feature</a>
+    <a href="https://github.com/dhina016/newsland/issues">Request Feature</a>
   </p>
 </p>
 
@@ -50,7 +50,6 @@
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 
 
@@ -58,15 +57,15 @@
 ## About The Project
 
 ![Product Name Screen Shot][product-screenshot]
-    This expense management system is used to add the product either inward or outward. In inward, you can add inward product and balance is increased. In outward, you can add outward product and balance is decreased. You get the report of inward and outward as pdf, excel, and print.
-
+  
+Newsland is basic webapplication using flask. This is my first flask app. So, it may contains errors and its a simple news feed website. The guest can see the news only. After registration you can able to post news and edit your news. Then having admin login. Admin can access to post, edit, pin the news feed. Its very simple and basic concept. You can use this source to understand the working flask and jinja code
 
 
 ### Built With
 
 * [Bootsrap](https://getbootstrap.com/)
-* [Jquery](https://jquery.com/)
-* [Codeigniter](https://codeigniter.com/)
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -75,78 +74,125 @@ Follow the installation steps to open project without error
 
 ### Installation
  
-1. Download and extract the project in htdocs
-2. Create the database
-3. Upload or Import expense.sql in your database 
-4. Configure Base URL in application/config/config.php
+1. Download and extract the project
+2. I'm using xampp, so you can also use it and Create the database
+3. Upload or Import flask.sql in your database. 
+4. Download python 3.x and install on your PC. My pc is 64bit so i installed Python3(64bit). Set environmental variable for both python and pip or else you get command not found.
+5. I've used virtual environment. It's not necessary, but using virtual environment is preferable.
+Note: You can skip the 5th step if you don't want virtual environment
+(i) Make sure you've set your python path in environmental variable and then install 
 ```sh
-$config['base_url'] = 'http://localhost/expense_manager/';
+
+python -m venv venv
+
 ```
-5. Configure Database in application/config/constants.php
+(ii) I've already created. So now you want to activate it. I'm using windows. so I used CMD. Now open the cmd of your current project folder. My project folder is newsland.
 ```sh
-defined('DATABASE_NAME')     OR define('DATABASE_NAME', 'your database name'); // Database Name
-defined('DATABASE_USERNAME')       OR define('DATABASE_USERNAME', 'your database username'); // Database Username
-defined('DATABASE_PASS')      OR define('DATABASE_PASS', 'your database password'); // Database Password
-defined('DATABASE_HOST')      OR define('DATABASE_HOST', 'your hostname'); // Hostname
+
+D:\flask\newsland> cd /venv/Scripts/activate
+
+After venv is activated
+
+(venv) D:\flask\newsland>
+
 ```
-6. Configure Debug mode in application/config/database.php. development -> Show error, production -> Hide Error. Defalut Mode Production.
+(iii) Once you can close the project, this command is user to open the venv again and for deactivation command also given.
 ```sh
-'db_debug' => (ENVIRONMENT !== 'production'),
-Or
-'db_debug' => (ENVIRONMENT !== 'development'),
+
+D:\flask\newsland>workon venv
+
+If not working again activate your venv
+
+(venv) D:\flask\newsland>
+
+For Deactivating,
+
+D:\flask\newsland> cd /venv/Scripts/deactivate
+
 ```
-7. If you face any error Like **@sqlMode**, set stricton -> true application/config/database.php.
+6. Install the following requirements by following command.
 ```sh
-'stricton' => FALSE,
-To
-'stricton' => TRUE,
+
+D:\flask\newsland> pip install -r requirements.txt
+
 ```
-7. Admin Login.
+7. To run the the code, use this command 
 ```sh
-Username => socalled,
+
+D:\flask\newsland>python app.py
+
+or
+
+D:\flask\newsland>flask run
+
+```
+
+8. If you get any error, make sure you've done following things 
+```sh
+
+1. Python version should be 3.x.
+2. Settingup Environment variables.
+3. Installed all requirements without errors.
+4. I am using 64 bit. If you are using 32 Bit google it and fix it.
+5. Check the server is active or not.
+6. Imported sql file.
+7. Everything is done.
+```
+9. Admin Login.
+```sh
+url : http://127.0.0.1:5000/admin
+Username => admin,
 Password => 111111,
+
 ```
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Consider the situation, You are a chef of one restaurant and you want to monitor the profit amount. So here the expense management system works. A gang of 3 friends came to your restaurant and order 3 egg rice and 2 omelets. so you want 4 eggs and 1 kg of rice and plus some ingredients. Now you bought 5 eggs and rice in the store. Rice cost 40 rs and egg cost 5 rs. The total cost you spend 40+25(5*5) = 65. Now those friends eat well and paid you. The egg rice cost is 35 and omelet costs 10. Now you have 90(3*30)+20(2*10) = 110. So now you earned 70(135-65). This is how expense management works. Here Demo,
-Inward -> Egg Rice, Omelete
-Outward -> Egg, Rice
-
-**1.Login** :
+Newsland is a webapp for posting latest news. This newsland is very simple to use. Images are given below
+**1.Requirments** :
 ![S1][ss1]
 
-**2.Dashboard** :
+**2.Welcome Page** :
 ![S1][ss2]
 
-**3.Add Cash** :
+**3.News as Guest** :
 ![S1][ss3]
 
-**4.Manage Product** :
+**4.Contact** :
 ![S1][ss4]
 
-**5.Dashboard After Add Product** :
+**5.Register** :
 ![S1][ss5]
 
-**6.Outward** :
+**6.Login** :
 ![S1][ss6]
 
-**7.Dashboard After Outward** :
+**7.News as User** :
 ![S1][ss7]
 
-**8.View Inward** :
+**8.Add News** :
 ![S1][ss8]
 
-**9.Dashboard After Inward** :
+**9.EditNews** :
 ![S1][ss9]
 
-**10.Dashboard Table Report** :
+**9.Search by title** :
 ![S1][ss10]
+
+**10.News as Admin and Pin** :
+![S1][ss11]
+
+**11.Filter by Name** :
+You can also filter by name, date, category...
+![S1][ss12]
+
+**12.Logout** :
+![S1][ss13]
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/dhina016/Expense-Management/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/dhina016/newsland/issues) for a list of proposed features (and known issues).
 
 
 
@@ -173,46 +219,37 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/dhina016/Expense-Management](https://github.com/dhina016/Expense-Management)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-
-* [Concept Dashnoard](https://github.com/puikinsh/concept)
-* [Font Awesome](https://fontawesome.com/)
-* [Chart JS](https://www.chartjs.org/)
-
-
+Project Link: [https://github.com/dhina016/newsland](https://github.com/dhina016/newsland)
 
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/dhina016/Expense-Management.svg?style=flat-square
-[contributors-url]: https://github.com/dhina016/Expense-Management/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/dhina016/Expense-Management.svg?style=flat-square
-[forks-url]: https://github.com/dhina016/Expense-Management/network/members
-[stars-shield]: https://img.shields.io/github/stars/dhina016/Expense-Management.svg?style=flat-square
-[stars-url]: https://github.com/dhina016/Expense-Management/stargazers
-[issues-shield]: https://img.shields.io/github/issues/dhina016/Expense-Management.svg?style=flat-square
-[issues-url]: https://github.com/dhina016/Expense-Management/issues
-[license-shield]: https://img.shields.io/github/license/dhina016/Expense-Management.svg?style=flat-square
-[license-url]: https://github.com/dhina016/Expense-Management/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/dhina016/newsland.svg?style=flat-square
+[contributors-url]: https://github.com/dhina016/newsland/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/dhina016/newsland.svg?style=flat-square
+[forks-url]: https://github.com/dhina016/newsland/network/members
+[stars-shield]: https://img.shields.io/github/stars/dhina016/newsland.svg?style=flat-square
+[stars-url]: https://github.com/dhina016/newsland/stargazers
+[issues-shield]: https://img.shields.io/github/issues/dhina016/newsland.svg?style=flat-square
+[issues-url]: https://github.com/dhina016/newsland/issues
+[license-shield]: https://img.shields.io/github/license/dhina016/newsland.svg?style=flat-square
+[license-url]: https://github.com/dhina016/newsland/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dhina016/
-[product-screenshot]: assets/images/screenshot/bann.jpg
-[ss1]: assets/images/screenshot/s1.png
-[ss2]: assets/images/screenshot/s2.png
-[ss3]: assets/images/screenshot/s3.png
-[ss4]: assets/images/screenshot/s4.png
-[ss5]: assets/images/screenshot/s5.png
-[ss6]: assets/images/screenshot/s6.png
-[ss7]: assets/images/screenshot/s7.png
-[ss8]: assets/images/screenshot/s8.png
-[ss9]: assets/images/screenshot/s9.png
-[ss10]: assets/images/screenshot/s10.png
+[product-screenshot]: screenshot/bann.jpg
+[ss1]: screenshot/s1.png
+[ss2]: screenshot/bann.jpg
+[ss3]: screenshot/s2.png
+[ss4]: screenshot/s3.png
+[ss5]: screenshot/s4.png
+[ss6]: screenshot/s5.png
+[ss7]: screenshot/s6.png
+[ss8]: screenshot/s7.png
+[ss9]: screenshot/s8.png
+[ss10]: screenshot/s9.png
+[ss11]: screenshot/s10.png
+[ss12]: screenshot/s11.png
+[ss13]: screenshot/s12.png
 
 =======

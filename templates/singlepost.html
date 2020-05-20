@@ -22,13 +22,14 @@
 									<a href="#">
 										<h3>{{ detail.title }}</h3>
 									</a>
-									<ul class="meta pb-20">
+									<ul class="meta pb-2">
 										<li><a href="#"><span class="lnr lnr-user"></span>{{ detail.name }}</a></li>
 										<li><a href="#"><span class="lnr lnr-calendar-full"></span>{{
 											(detail.date).strftime("%d %B %Y") }}</a></li>
-									</ul>
 									<p>
-										{{ detail.description }}									</p>								
+										{{ detail.description | trim }}									
+									</p>								
+									</ul>
 							</div>
 						</div>
 						<!-- End single-post Area -->

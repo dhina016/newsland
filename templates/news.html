@@ -50,7 +50,7 @@
                   </li>
                 </ul>
                 <p class="excert">
-                  {{ n.description }}
+                  {{ n.description |truncate(100) }}
 				</p>
 				<div class="flex">
 				{% if session.admin %}
@@ -119,7 +119,7 @@
                     </li>
                   </ul>
                   <p class="excert">
-					{{ n.description }}
+					{{ n.description |truncate(50) }}
 				  </p>
 				  <div class="flex">
 				  {% if session.admin %}
@@ -191,7 +191,7 @@
                     </li>
                   </ul>
                   <p class="excert">
-                    {{ n.description }}
+                    {{ n.description |truncate(50) }}
 				  </p>
 				  {% if session.admin %}
 				  <form action="/delete" method="post">
