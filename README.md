@@ -183,7 +183,7 @@ Newsland is a webapp for posting latest news. This newsland is very simple to us
 ![S1][ss11]
 
 **11.Filter by Name** :  
-You can also filter by name, date, category...
+You can also filter by name, date, category by clicking name, date, category in the news page.
 ![S1][ss12]
 
 **12.Logout** :
