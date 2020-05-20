@@ -78,7 +78,7 @@ Follow the installation steps to open project without error
 2. I'm using xampp, so you can also use it and Create the database
 3. Upload or Import flask.sql in your database. 
 4. Download python 3.x and install on your PC. My pc is 64bit so i installed Python3(64bit). Set environmental variable for both python and pip or else you get command not found.
-5. I've used virtual environment. It's not necessary, but using virtual environment is preferable.
+5. I've used virtual environment. It's not necessary, but using virtual environment is preferable.  
 Note: You can skip the 5th step if you don't want virtual environment
 (i) Make sure you've set your python path in environmental variable and then install 
 ```sh
