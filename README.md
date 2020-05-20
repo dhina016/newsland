@@ -79,7 +79,7 @@ Follow the installation steps to open project without error
 3. Upload or Import flask.sql in your database. 
 4. Download python 3.x and install on your PC. My pc is 64bit so i installed Python3(64bit). Set environmental variable for both python and pip or else you get command not found.
 5. I've used virtual environment. It's not necessary, but using virtual environment is preferable.  
-Note: You can skip the 5th step if you don't want virtual environment
+Note: You can skip the 5th step if you don't want virtual environment  
 (i) Make sure you've set your python path in environmental variable and then install 
 ```sh
 
@@ -148,7 +148,7 @@ Password => 111111,
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Newsland is a webapp for posting latest news. This newsland is very simple to use. Images are given below
+Newsland is a webapp for posting latest news. This newsland is very simple to use. Images are given below  
 **1.Requirments** :
 ![S1][ss1]
 
@@ -182,7 +182,7 @@ Newsland is a webapp for posting latest news. This newsland is very simple to us
 **10.News as Admin and Pin** :
 ![S1][ss11]
 
-**11.Filter by Name** :
+**11.Filter by Name** :  
 You can also filter by name, date, category...
 ![S1][ss12]
 
