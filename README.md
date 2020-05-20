@@ -237,19 +237,19 @@ Project Link: [https://github.com/dhina016/newsland](https://github.com/dhina016
 [license-url]: https://github.com/dhina016/newsland/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dhina016/
-[product-screenshot]: screenshot/bann.jpg
-[ss1]: screenshot/s1.png
-[ss2]: screenshot/bann.jpg
-[ss3]: screenshot/s2.png
-[ss4]: screenshot/s3.png
-[ss5]: screenshot/s4.png
-[ss6]: screenshot/s5.png
-[ss7]: screenshot/s6.png
-[ss8]: screenshot/s7.png
-[ss9]: screenshot/s8.png
-[ss10]: screenshot/s9.png
-[ss11]: screenshot/s10.png
-[ss12]: screenshot/s11.png
-[ss13]: screenshot/s12.png
+[product-screenshot]: screenshot/bann.png
+[ss1]: screenshot/ss1.png
+[ss2]: screenshot/bann.png
+[ss3]: screenshot/ss2.png
+[ss4]: screenshot/ss3.png
+[ss5]: screenshot/ss4.png
+[ss6]: screenshot/ss5.png
+[ss7]: screenshot/ss6.png
+[ss8]: screenshot/ss7.png
+[ss9]: screenshot/ss8.png
+[ss10]: screenshot/ss9.png
+[ss11]: screenshot/ss10.png
+[ss12]: screenshot/ss11.png
+[ss13]: screenshot/ss12.png
 
 =======
