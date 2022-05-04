@@ -63,7 +63,7 @@ Newsland is basic webapplication using flask. This is my first flask app. So, it
 
 ### Built With
 
-* [Bootsrap](https://getbootstrap.com/)
+* [Bootstrap](https://getbootstrap.com/)
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 * [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
 
